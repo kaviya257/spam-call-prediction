@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Phone Logo Image -->
+    <ImageView
+        android:id="@+id/imgPhoneLogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/phone_logo"
+        android:contentDescription="Phone Logo"
+        android:layout_marginBottom="30dp"/>
+
+
+
+    <Button
+        android:id="@+id/btnChoose"
+        android:text="Choose Audio File"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/txtFile"
+        android:paddingTop="20dp"
+        android:textSize="16sp"
+        android:text="No file selected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnUpload"
+        android:text="Upload &amp; Detect Spam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/txtResult"
+        android:textSize="20sp"
+        android:paddingTop="30dp"
+        android:text="Result will appear here"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

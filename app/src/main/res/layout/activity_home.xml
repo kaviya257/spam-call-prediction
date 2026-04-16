@@ -1,0 +1,97 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AI Spam Detection"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            android:textColor="#000"/>
+
+        <Button
+            android:id="@+id/btnChooseAudio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose Audio"
+            android:background="@drawable/button_bg"
+            android:textColor="#fff"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/btnPlayAudio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Play Audio"
+            android:background="@drawable/button_bg"
+            android:textColor="#fff"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/btnSubmitAudio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Analyze Call"
+            android:background="@drawable/button_bg"
+            android:textColor="#fff"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/txtAudioFile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No file selected"
+            android:padding="10dp"
+            android:background="#EEEEEE"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/txtConvertedText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Converted Text"
+            android:textStyle="bold"
+            android:padding="12dp"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/txtAccuracy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Accuracy"
+            android:textStyle="bold"
+            android:padding="12dp"
+            android:background="#E3F2FD"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/txtConclusion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Conclusion"
+            android:textStyle="bold"
+            android:padding="12dp"
+            android:background="#FFF3E0"/>
+
+        <Button
+            android:id="@+id/btnAiHelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get AI Help"
+            android:background="@drawable/button_bg"
+            android:textColor="#fff"
+            android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
