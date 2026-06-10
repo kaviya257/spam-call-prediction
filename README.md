@@ -1,35 +1,79 @@
 # Intelligent AI-Based Spam Call Detection System
 
-## Overview
+An AI-powered spam call detection system that combines Speech Recognition, Natural Language Processing (NLP), and Machine Learning to identify fraudulent or spam calls. The project analyzes both the voice characteristics and conversation content to provide accurate spam detection and supports multilingual call analysis.
 
-The Intelligent AI-Based Spam Call Detection System is an AI-powered mobile application that detects whether an incoming call is spam or legitimate by analyzing both the audio characteristics and the conversation content. The system combines speech recognition, natural language processing, and machine learning techniques to improve spam call identification accuracy.
+## 🚀 Project Overview
 
-## Features
+The Intelligent AI-Based Spam Call Detection System is designed to protect users from fraudulent and unwanted calls by leveraging AI techniques. The system transcribes call audio, detects the language, translates non-English conversations, and performs spam classification using both audio and text analysis models. The project demonstrates the practical application of Machine Learning, Deep Learning, and NLP in cybersecurity and communication systems.
 
-* Real-time spam call detection
+## ✨ Key Features
+
+### 📞 Spam Call Detection
+
+* Real-time spam and legitimate call classification
+* Multimodal analysis using audio and text data
+* Confidence-based spam prediction scoring
+
+### 🎙 Speech Processing
+
 * Speech-to-text transcription using Whisper
-* Multilingual call support with automatic language detection
-* Automatic translation of non-English conversations
-* Text-based spam classification using DistilBERT
-* Audio-based spam classification using MFCC feature extraction
-* Combined multimodal prediction using both audio and text analysis
-* Complaint generation and PDF report support
-* User-friendly Android interface
+* Automatic language detection
+* Support for multilingual call conversations
+* Translation of non-English calls into English
 
-## System Architecture
+### 🤖 AI & Machine Learning
+
+* Text-based spam detection using DistilBERT
+* Audio-based spam detection using MFCC feature extraction
+* Combined prediction using audio and text models
+* Probability-based spam scoring
+
+### 📄 Complaint Management
+
+* Generate complaint reports
+* Complaint PDF generation
+* Store and manage spam call records
+
+## 🖼️ Project Screenshots
+
+### 🔐 Authentication
+
+* Login Page
+
+### 🏠 Home Interface
+
+* Home Page
+
+### 📞 Spam Call Analysis
+
+* Spam Call Prediction
+* Spam Call Transcription
+* Normal Call Detection
+* Normal Call Transcription
+
+### 📄 Complaint Management
+
+* Complaint Form
+* Generated Complaint PDF
+
+## 🏗️ System Workflow
 
 1. User uploads or records a call.
 2. Audio is converted into WAV format.
-3. Whisper transcribes the call conversation.
+3. Whisper transcribes the conversation.
 4. Language is detected automatically.
-5. Non-English content is translated to English.
-6. DistilBERT analyzes the transcript for spam content.
-7. MFCC audio features are extracted from the call.
-8. Audio classifier predicts spam probability.
+5. Non-English conversations are translated into English.
+6. DistilBERT performs text-based spam classification.
+7. MFCC features are extracted from the audio.
+8. Audio classification model predicts spam probability.
 9. Both predictions are combined to generate the final result.
-10. The application displays Spam or Not Spam along with confidence scores.
+10. The system displays Spam or Not Spam with confidence scores.
 
-## Tech Stack
+## 💡 Novelty
+
+Unlike traditional spam detection systems that rely solely on blacklists or text analysis, this project adopts a multimodal approach by combining voice characteristics and conversation content, resulting in more reliable and intelligent spam call detection.
+
+## 🏗️ Tech Stack
 
 ### Frontend
 
@@ -46,85 +90,24 @@ The Intelligent AI-Based Spam Call Detection System is an AI-powered mobile appl
 
 * Whisper
 * DistilBERT
-* TensorFlow / Keras
+* TensorFlow
+* Keras
 * PyTorch
 * Librosa
 * NumPy
 
-### Additional Libraries
+### Additional Tools
 
 * Google Translator API
 * Pydub
 * FFmpeg
 
-## Novelty
+## 👩‍💻 Author
 
-Unlike traditional spam detection systems that rely only on blacklist databases or text analysis, this project uses a multimodal approach by combining voice characteristics and conversation content, resulting in more reliable spam call detection.
+**Kaviya B**
 
-## Screenshots
+GitHub: **kaviya257**
 
-### Login Page
+## ⭐ If you like this project
 
-![Login Page](Outputs/Login_Page.jpeg)
-
-### Home Page
-
-![Home Page](Outputs/home_page.jpeg)
-
-### Spam Prediction
-
-![Spam Prediction](Outputs/Spam_prediction.jpeg)
-
-### Normal Call Detection
-
-![Normal Call Detection](Outputs/normal_call.jpeg)
-
-### Spam Call Transcription
-
-![Spam Call Transcription](Outputs/spam_Call_Transcrption.jpeg)
-
-### Normal Call Transcription
-
-![Normal Call Transcription](Outputs/normal_call_Transcription.jpeg)
-
-### Complaint Form
-
-![Complaint Form](Outputs/complaint_pdf_form.jpeg)
-
-### Complaint PDF
-
-![Complaint PDF](Outputs/complaint_pdf.jpeg)
-
-## Installation
-
-```bash
-git clone https://github.com/kaviya257/spam-call-prediction.git
-```
-
-### Backend Setup
-
-```bash
-cd spam_backend
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
-
-### Android Setup
-
-1. Open the project in Android Studio.
-2. Configure the backend API URL.
-3. Build and run the application on an Android device or emulator.
-
-## Future Enhancements
-
-* Live call monitoring
-* Advanced fraud category detection
-* Cloud deployment
-* User feedback-based model retraining
-* Integration with telecom spam databases
-
-## Author
-
-Kaviya B
-B.E. Computer Science and Engineering
-Coimbatore Institute of Technology
+Give a ⭐ to support the project and improve visibility!
