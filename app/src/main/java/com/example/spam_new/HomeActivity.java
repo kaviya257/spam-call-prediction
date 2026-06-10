@@ -95,65 +95,210 @@ public class HomeActivity extends AppCompatActivity {
     private void submitAudio() {
 
         if (selectedAudioUri == null) {
-            txtConvertedText.setText("Please choose an audio file first");
+
+            txtConvertedText.setText(
+                    "Please choose an audio file first"
+            );
+
             txtConclusion.setText("--");
+
             txtAccuracy.setText("--");
+
             return;
         }
 
-        audioUploaderHelper.uploadAudio(selectedAudioUri, response -> {
+        txtConclusion.setText("Analyzing...");
 
-            runOnUiThread(() -> {
+        audioUploaderHelper.uploadAudio(
+                selectedAudioUri,
 
-                try {
-                    JSONObject obj = new JSONObject(response);
+                response -> runOnUiThread(() -> {
 
-                    if (obj.has("text")) {
+                    try {
 
-                        String text = obj.getString("text");
-                        double prob = obj.getDouble("spam_probability");
-                        String label = obj.getString("label");
+                        JSONObject obj =
+                                new JSONObject(response);
 
-                        // Show on screen
-                        txtConvertedText.setText(text);
-                        txtAccuracy.setText(prob + " %");
-                        txtConclusion.setText(label);
+                        // =========================
+                        // SERVER ERROR
+                        // =========================
 
-                        // 🔥 UI COLOR IMPROVEMENT
-                        if (label.equalsIgnoreCase("SPAM")) {
-                            txtConclusion.setTextColor(Color.RED);
-                        } else {
-                            txtConclusion.setTextColor(Color.GREEN);
+                        if (obj.has("detail")) {
+
+                            txtConclusion.setText(
+
+                                    "Server Error:\n"
+
+                                            + obj.getString(
+                                            "detail"
+                                    )
+                            );
+
+                            return;
                         }
 
-                        // Popup
-                        AlertDialog dialog = new AlertDialog.Builder(HomeActivity.this)
-                                .setTitle("Spam Detection Result")
-                                .setMessage(
-                                        label.equalsIgnoreCase("SPAM") ?
-                                                "⚠ Warning!\nThis call is SPAM." :
-                                                "✅ Safe!\nThis call is NOT SPAM."
+                        // =========================
+                        // NEW FASTAPI RESPONSE
+                        // =========================
+
+                        String transcription =
+                                obj.optString(
+                                        "transcription",
+                                        "No transcription"
+                                );
+
+                        String language =
+                                obj.optString(
+                                        "detected_language",
+                                        "Unknown"
+                                );
+
+                        double textScore =
+                                obj.optDouble(
+                                        "text_spam_score",
+                                        0
+                                );
+
+                        double audioScore =
+                                obj.optDouble(
+                                        "audio_spam_score",
+                                        0
+                                );
+
+                        double finalScore =
+                                obj.optDouble(
+                                        "final_spam_score",
+                                        0
+                                );
+
+                        String prediction =
+                                obj.optString(
+                                        "prediction",
+                                        "UNKNOWN"
+                                );
+
+                        // =========================
+                        // DISPLAY
+                        // =========================
+
+                        txtConvertedText.setText(
+
+                                "TRANSCRIPTION\n\n"
+
+                                        + transcription
+
+                                        + "\n\n------------------\n\n"
+
+                                        + "LANGUAGE : "
+                                        + language
+                        );
+
+                        txtAccuracy.setText(
+
+                                "TEXT SCORE : "
+                                        + textScore + "%"
+
+                                        + "\n\n"
+
+                                        + "AUDIO SCORE : "
+                                        + audioScore + "%"
+
+                                        + "\n\n"
+
+                                        + "FINAL SCORE : "
+                                        + finalScore + "%"
+                        );
+
+                        txtConclusion.setText(
+                                prediction
+                        );
+
+                        // =========================
+                        // COLORS
+                        // =========================
+
+                        if (
+                                prediction.equalsIgnoreCase(
+                                        "SPAM"
                                 )
-                                .setCancelable(false)
-                                .setPositiveButton("OK", null)
-                                .create();
+                        ) {
+
+                            txtConclusion.setTextColor(
+                                    Color.RED
+                            );
+
+                        } else {
+
+                            txtConclusion.setTextColor(
+                                    Color.GREEN
+                            );
+                        }
+
+                        // =========================
+                        // POPUP
+                        // =========================
+
+                        AlertDialog dialog =
+                                new AlertDialog.Builder(
+                                        HomeActivity.this
+                                )
+
+                                        .setTitle(
+                                                "Spam Detection Result"
+                                        )
+
+                                        .setMessage(
+
+                                                prediction.equalsIgnoreCase(
+                                                        "SPAM"
+                                                )
+
+                                                        ?
+
+                                                        "⚠ WARNING!\n\n"
+
+                                                                + "This call appears to be SPAM.\n\n"
+
+                                                                + "Confidence : "
+                                                                + finalScore
+                                                                + "%"
+
+                                                        :
+
+                                                        "✅ SAFE CALL\n\n"
+
+                                                                + "This call appears safe.\n\n"
+
+                                                                + "Safety Score : "
+                                                                + (100 - finalScore)
+                                                                + "%"
+                                        )
+
+                                        .setCancelable(false)
+
+                                        .setPositiveButton(
+                                                "OK",
+                                                null
+                                        )
+
+                                        .create();
 
                         dialog.show();
 
-                    } else if (obj.has("detail")) {
-                        txtConclusion.setText("Server error: " + obj.getString("detail"));
-                    } else if (obj.has("error")) {
-                        txtConclusion.setText(obj.getString("error"));
-                    } else {
-                        txtConclusion.setText("Unexpected response");
+                    } catch (Exception e) {
+
+                        txtConclusion.setText(
+                                "Invalid server response"
+                        );
+
+                        txtConvertedText.setText(
+                                response
+                        );
+
+                        e.printStackTrace();
                     }
 
-                } catch (Exception e) {
-                    txtConclusion.setText("Invalid server response");
-                }
-
-            });
-
-        });
+                })
+        );
     }
 }

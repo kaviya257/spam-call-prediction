@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+joblib
+openai-whisper
+torch
+numpy
+scikit-learn
+python-multipart

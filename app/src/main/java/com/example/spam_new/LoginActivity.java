@@ -29,12 +29,14 @@ public class LoginActivity extends AppCompatActivity {
             if (user.isEmpty() || pass.isEmpty()) {
                 Toast.makeText(this, "Please enter username and password", Toast.LENGTH_SHORT).show();
             } else {
-                // Simple demo check — you can connect to backend if needed
+
                 Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, HomeActivity.class));
                 finish();
             }
         });
     }
+
+
 }
 
