@@ -120,6 +120,11 @@ Unlike traditional spam detection systems that rely solely on blacklists or text
 
 GitHub: **kaviya257**
 
+**Anisha B**
+GitHub: **AnishaBaskaran-22**
+
+Project developed as a team mini-project.
+
 ## ⭐ If you like this project
 
 Give a ⭐ to support the project and improve visibility!
