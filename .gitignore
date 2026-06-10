@@ -13,3 +13,8 @@
 .externalNativeBuild
 .cxx
 local.properties
+spam_backend/venv/
+spam_backend/__pycache__/
+spam_backend/temp/
+*.wav
+*.pyc
