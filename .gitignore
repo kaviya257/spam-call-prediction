@@ -8,3 +8,5 @@ spam_backend/temp/
 *.pkl
 spam_backend/audio_spam_dataset.csv
 spam_backend/synthetic_fraud_call_dataset.csv
+spam_backend/spam_distilbert_model/
+*.safetensors
