@@ -124,6 +124,15 @@ GitHub: **kaviya257**
 
 GitHub: **AnishaBaskaran-22**
 
+**Barath Vaj S**
+
+GitHub: **Barath Vaj**
+
+**Dinesh Kumar C**
+
+GitHub: **Dinesh Kumar**
+
+
 Project developed as a team mini-project.
 
 ## ⭐ If you like this project
