@@ -4,3 +4,5 @@ spam_backend/__pycache__/
 spam_backend/temp/
 *.wav
 *.pyc
+*.h5
+*.pkl
