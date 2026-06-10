@@ -36,25 +36,37 @@ The Intelligent AI-Based Spam Call Detection System is designed to protect users
 
 ## 🖼️ Project Screenshots
 
-### 🔐 Authentication
+### 🔐 Login Page
 
-* Login Page
+![Login Page](Outputs/Login_Page.jpeg)
 
-### 🏠 Home Interface
+### 🏠 Home Page
 
-* Home Page
+![Home Page](Outputs/home_page.jpeg)
 
-### 📞 Spam Call Analysis
+### 📞 Spam Call Prediction
 
-* Spam Call Prediction
-* Spam Call Transcription
-* Normal Call Detection
-* Normal Call Transcription
+![Spam Prediction](Outputs/Spam_prediction.jpeg)
 
-### 📄 Complaint Management
+### ☎️ Normal Call Detection
 
-* Complaint Form
-* Generated Complaint PDF
+![Normal Call Detection](Outputs/normal_call.jpeg)
+
+### 📝 Spam Call Transcription
+
+![Spam Call Transcription](Outputs/spam_Call_Transcrption.jpeg)
+
+### 📄 Normal Call Transcription
+
+![Normal Call Transcription](Outputs/normal_call_Transcription.jpeg)
+
+### 📋 Complaint Form
+
+![Complaint Form](Outputs/complaint_pdf_form.jpeg)
+
+### 📑 Generated Complaint PDF
+
+![Complaint PDF](Outputs/complaint_pdf.jpeg)
 
 ## 🏗️ System Workflow
 
